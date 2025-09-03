@@ -1,0 +1,109 @@
+[
+  {
+    "type": "video",
+    "videoId": "kYB8IZa5AuE",
+    "start": 0,
+    "end": 60,
+    "title": "Introduction to Linear Algebra"
+  },
+  {
+    "type": "exercise",
+    "mode": "code",
+    "prompt": "Create a 2x2 identity matrix using NumPy and verify its properties. Try multiplying it by a vector to see what happens.",
+    "starterCode": "import numpy as np\n\n# Create a 2x2 identity matrix\nI = np.eye(2)\nprint('Identity Matrix:')\nprint(I)\n\n# Create a test vector\nv = np.array([3, 4])\nprint('\\nTest Vector:', v)\n\n# Multiply identity matrix by vector\nresult = I @ v\nprint('\\nI @ v =', result)\n\n# Verify I @ v = v\nprint('\\nIs I @ v equal to v?', np.array_equal(result, v))"
+  },
+  {
+    "type": "video",
+    "videoId": "kYB8IZa5AuE",
+    "start": 60,
+    "end": 120,
+    "title": "Matrix Operations"
+  },
+  {
+    "type": "exercise",
+    "mode": "quiz",
+    "prompt": "What is the result of multiplying a matrix by its inverse?",
+    "choices": ["The original matrix", "The identity matrix", "Zero matrix", "The transpose"],
+    "answerIndex": 1
+  },
+  {
+    "type": "video",
+    "videoId": "kYB8IZa5AuE",
+    "start": 120,
+    "end": 180,
+    "title": "Linear Transformations"
+  },
+  {
+    "type": "exercise",
+    "mode": "code",
+    "prompt": "Create a rotation matrix that rotates a 2D vector by 45 degrees. Apply it to the vector [1, 0] and plot both the original and rotated vectors.",
+    "starterCode": "import numpy as np\nimport matplotlib.pyplot as plt\n\n# Create rotation matrix for 45 degrees\nangle = np.pi / 4  # 45 degrees in radians\ncos_a = np.cos(angle)\nsin_a = np.sin(angle)\n\nR = np.array([[cos_a, -sin_a],\n               [sin_a, cos_a]])\n\nprint('Rotation Matrix (45°):')\nprint(R)\n\n# Original vector\nv = np.array([1, 0])\nprint('\\nOriginal vector:', v)\n\n# Rotated vector\nv_rotated = R @ v\nprint('\\nRotated vector:', v_rotated)\n\n# Create plot data for visualization\nplot_data = {\n    'type': 'scatter',\n    'mode': 'markers+lines',\n    'x': [0, v[0], 0, v_rotated[0]],\n    'y': [0, v[1], 0, v_rotated[1]],\n    'name': 'Vectors',\n    'marker': {'size': 10, 'color': ['red', 'red', 'blue', 'blue']}\n}"
+  },
+  {
+    "type": "video",
+    "videoId": "kYB8IZa5AuE",
+    "start": 180,
+    "end": 240,
+    "title": "Eigenvalues and Eigenvectors"
+  },
+  {
+    "type": "exercise",
+    "mode": "quiz",
+    "prompt": "Which of the following matrices has eigenvalues 2 and 3?",
+    "choices": ["[[2,0],[0,3]]", "[[1,1],[0,2]]", "[[2,1],[0,3]]", "All of the above"],
+    "answerIndex": 3
+  },
+  {
+    "type": "video",
+    "videoId": "kYB8IZa5AuE",
+    "start": 240,
+    "end": 300,
+    "title": "Applications in Data Science"
+  },
+  {
+    "type": "exercise",
+    "mode": "simulation",
+    "prompt": "Interactive supply-demand economics simulation: Adjust the demand and supply curve parameters using the sliders to see how they affect market equilibrium. Observe how changes in intercepts and slopes impact price and quantity.",
+    "config": {}
+  },
+  {
+    "type": "video",
+    "videoId": "kYB8IZa5AuE",
+    "start": 300,
+    "end": 360,
+    "title": "Machine Learning Basics"
+  },
+  {
+    "type": "exercise",
+    "mode": "ml",
+    "prompt": "Implement gradient descent to fit a linear regression model. The code will generate synthetic data, train a model using gradient descent, and visualize both the training process and final results with plots.",
+    "starterCode": "import numpy as np\n\n# This exercise will automatically run the training code\n# You can modify the learning rate, number of epochs, or add regularization\n# The system will show training progress and final results\n\n# Parameters you can adjust:\nlearning_rate = 0.01\nepochs = 100\n\nprint(f'Training with learning rate: {learning_rate}, epochs: {epochs}')\nprint('Click Run Training to start the machine learning process!')"
+  },
+  {
+    "type": "video",
+    "videoId": "kYB8IZa5AuE",
+    "start": 360,
+    "end": 420,
+    "title": "Advanced Topics"
+  },
+  {
+    "type": "exercise",
+    "mode": "code",
+    "prompt": "Create a function to compute the determinant of a 2x2 matrix. Test it with different matrices including the identity matrix, a rotation matrix, and a random matrix.",
+    "starterCode": "import numpy as np\n\ndef determinant_2x2(matrix):\n    \"\"\"Compute determinant of a 2x2 matrix\"\"\"\n    if matrix.shape != (2, 2):\n        return \"Error: Matrix must be 2x2\"\n    \n    # Your code here\n    # det = a*d - b*c for matrix [[a,b],[c,d]]\n    \n    return det\n\n# Test matrices\nI = np.eye(2)  # Identity matrix\ndet_I = determinant_2x2(I)\nprint(f'Determinant of identity matrix: {det_I}')\n\n# Test with a random matrix\nrandom_matrix = np.random.rand(2, 2)\ndet_random = determinant_2x2(random_matrix)\nprint(f'\\nRandom matrix:')\nprint(random_matrix)\nprint(f'\\nDeterminant: {det_random}')\n\n# Verify with numpy\nnumpy_det = np.linalg.det(random_matrix)\nprint(f'\\nNumPy determinant: {numpy_det}')"
+  },
+  {
+    "type": "video",
+    "videoId": "kYB8IZa5AuE",
+    "start": 420,
+    "end": 480,
+    "title": "Conclusion and Next Steps"
+  },
+  {
+    "type": "exercise",
+    "mode": "quiz",
+    "prompt": "What have you learned about linear algebra in this lesson?",
+    "choices": ["Matrix operations and properties", "Linear transformations and their applications", "How linear algebra relates to machine learning", "All of the above"],
+    "answerIndex": 3
+  }
+]
